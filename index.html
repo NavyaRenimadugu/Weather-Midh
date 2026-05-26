@@ -2,68 +2,180 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WeatherPulse</title>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>WeatherPulse Pro</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <h1>WeatherPulse Analytics</h1>
+    <h1>WeatherPulse Pro</h1>
 
-  <div class="search-section">
+    <!-- SEARCH -->
 
-    <input
-      type="text"
-      id="cityInput"
-      placeholder="Search city..."
-    >
+    <div class="search-section">
 
-    <button onclick="getWeather()">
-      Search
-    </button>
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Search city..."
+      >
+
+      <button onclick="getWeather()">
+        Search Weather
+      </button>
+
+    </div>
+
+    <!-- LOADER -->
+
+    <div id="loader" class="loader hidden"></div>
+
+    <!-- TOP SECTION -->
+
+    <div class="top-grid">
+
+      <!-- MAIN WEATHER -->
+
+      <div class="glass-card">
+
+        <div class="main-weather">
+
+          <div>
+
+            <h2 id="cityName">
+              Hyderabad
+            </h2>
+
+            <div class="temp" id="temp">
+              29°C
+            </div>
+
+            <div class="condition" id="condition">
+              Cloudy Weather
+            </div>
+
+          </div>
+
+          <img
+            id="weatherIcon"
+            class="weather-icon"
+            src=""
+          >
+
+        </div>
+
+      </div>
+
+      <!-- HIGHLIGHTS -->
+
+      <div class="glass-card">
+
+        <div class="highlight-grid">
+
+          <div class="highlight-card">
+
+            <h3>Humidity</h3>
+
+            <p id="humidity">
+              70%
+            </p>
+
+          </div>
+
+          <div class="highlight-card">
+
+            <h3>Wind Speed</h3>
+
+            <p id="wind">
+              12 km/h
+            </p>
+
+          </div>
+
+          <div class="highlight-card">
+
+            <h3>Feels Like</h3>
+
+            <p id="feels">
+              31°C
+            </p>
+
+          </div>
+
+          <div class="highlight-card">
+
+            <h3>Pressure</h3>
+
+            <p id="pressure">
+              1012
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FORECAST -->
+
+    <h2 class="section-title">
+      7-Day Forecast
+    </h2>
+
+    <div
+      id="forecastGrid"
+      class="forecast-grid"
+    ></div>
+
+    <!-- CHART -->
+
+    <div class="glass-card chart-card">
+
+      <h2>
+        Temperature Analytics
+      </h2>
+
+      <canvas id="tempChart"></canvas>
+
+    </div>
+
+    <!-- HISTORY -->
+
+    <div class="glass-card chart-card">
+
+      <h2>
+        Search History
+      </h2>
+
+      <ul id="historyList"></ul>
+
+    </div>
 
   </div>
 
-  <div id="loader" class="loader hidden"></div>
-
-  <div class="weather-card">
-
-    <h2 id="cityName"></h2>
-
-    <img id="weatherIcon">
-
-    <p id="temperature"></p>
-
-    <p id="condition"></p>
-
-    <p id="humidity"></p>
-
-    <p id="wind"></p>
-
-  </div>
-
-  <h2>7-Day Forecast</h2>
-
-  <div id="forecastContainer" class="forecast-grid"></div>
-
-  <h2>Temperature Analytics</h2>
-
-  <canvas id="tempChart"></canvas>
-
-  <h2>Search History</h2>
-
-  <ul id="historyList"></ul>
-
-</div>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 
 </body>
+
 </html>
